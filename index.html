@@ -6,6 +6,7 @@
 
       body {
         font-family: Comfortaa, monospace;
+        font-size: 30px;
       }
     </style>
     <!-- Load the Paper.js library -->
@@ -30,12 +31,12 @@
       paper.project.activeLayer.children[0].position = event.point;
     }
 
-    var text = new paper.PointText(new paper.Point(200, 50));
+    var text = new paper.PointText(new paper.Point(150, 50));
     text.justification = 'center';
     text.fillColor = 'black';
-    text.content = 'this is text';
+    text.content = 'This is some text';
     text.fontFamily = 'Comfortaa';
-    text.fontSize = 40;
+    text.fontSize = 30;
 
     paper.view.draw();
   }
