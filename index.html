@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url('fonts.css');
+
+      body {
+        font-family: Comfortaa, monospace;
+      }
+    </style>
+    <!-- Load the Paper.js library -->
+</head>
+<body>
+
+  <div>This is some text</div>
+  <canvas id="myCanvas"></canvas>
+
+
+  <!-- JS STARTS HERE -->
+  <script type="text/javascript" src="paper.js"></script>
+  <script type="text/javascript">
+  window.onload = function() {
+    // Get a reference to the canvas object
+    var canvas = document.getElementById('myCanvas');
+    // Create an empty project and a view for the canvas:
+    paper.setup(canvas);
+
+    var dragTool = new paper.Tool();
+    dragTool.onMouseDrag = function(event) {
+      paper.project.activeLayer.children[0].position = event.point;
+    }
+
+    var text = new paper.PointText(new paper.Point(200, 50));
+    text.justification = 'center';
+    text.fillColor = 'black';
+    text.content = 'this is text';
+    text.fontFamily = 'Comfortaa';
+    text.fontSize = 40;
+
+    paper.view.draw();
+  }
+</script>
+</body>
+</html>
